@@ -24,7 +24,7 @@ class Program
         Console.WriteLine($"The average of all numbers is {numbers.Average()}");
         Console.WriteLine($"The largest number is {numbers.Max()}");
 
-        int smallestPos = numbers.Where(n => n > 0).Min();  //.Where goes through every item in numbers and returns on the ones "where" the condition is true. (n => n > 0) is called a lambda expression. "Take each number n and check if n>0." if true-keep  if false- ignore it. Like a sieve that removes items you don't want.
+        int smallestPos = numbers.Where(n => n > 0).Min();  //.Where goes through every item in numbers and returns on the ones "where" the condition is true. (n => n > 0) is called a lambda expression. (n is the parameter, => means "goes to" or "returns", n>0 is the return value....or Take each number 'n' and return 'true' if it's greater than 0.) "Take each number n and check if n>0." if true-keep  if false- ignore it. Like a sieve that removes items you don't want.
         Console.WriteLine($"The smallest positive number is {smallestPos}.");
           
 
