@@ -5,7 +5,7 @@ public class Resume
 
 {
     public string _name = "";
-       public List<Job> _jobs = new List<Job>(); // "Create a variable names _jobs that can hold many Job objects that myResume will later use."
+       public List<Job> _jobs = new List<Job>(); // "Create a variable names _jobs that can hold many Job objects that myResume will later usere."
       
     public void Display()
     {
