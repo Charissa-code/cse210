@@ -1,0 +1,210 @@
+┌──────────────────────────────────────────────────────────────┐
+│                      ABSTRACTION                            │
+├──────────────────────────────────────────────────────────────┤
+│ Definition:                                                 │
+│ Turning complex ideas into simple ones by keeping only      │
+│ the essential characteristics.                              │
+│                                                              │
+│ Purpose:                                                     │
+│ - Simplifies programming                                     │
+│ - Organizes software                                         │
+│ - Hides unnecessary complexity                               │
+│ - Allows reusable code                                       │
+└──────────────────────────────────────────────────────────────┘
+
+
+                ▼ USED THROUGH ▼
+
+
+┌──────────────────────────────────────────────────────────────┐
+│                           CLASS                             │
+├──────────────────────────────────────────────────────────────┤
+│ Definition:                                                  │
+│ A blueprint/template for creating objects.                   │
+│                                                              │
+│ Contains:                                                    │
+│ - Attributes (member variables/state)                        │
+│ - Methods (behaviors/functions)                              │
+│                                                              │
+│ Example:                                                     │
+│ Person class                                                 │
+│ Blind class                                                  │
+│ Resume class                                                 │
+└──────────────────────────────────────────────────────────────┘
+
+
+                ▼ CREATES ▼
+
+
+┌──────────────────────────────────────────────────────────────┐
+│                         INSTANCE                             │
+│                       (OBJECT)                               │
+├──────────────────────────────────────────────────────────────┤
+│ Definition:                                                  │
+│ A real object created from a class.                          │
+│                                                              │
+│ Keyword Used:                                                │
+│ new                                                          │
+│                                                              │
+│ Example:                                                     │
+│ Person person1 = new Person();                               │
+│ Blind kitchen = new Blind();                                 │
+└──────────────────────────────────────────────────────────────┘
+
+
+                ▼ HAS ▼
+
+
+┌──────────────────────┐      ┌────────────────────────┐
+│      ATTRIBUTES      │      │        METHODS         │
+├──────────────────────┤      ├────────────────────────┤
+│ Variables that store │      │ Functions/behaviors    │
+│ object data/state    │      │ belonging to class     │
+│                      │      │                        │
+│ Examples:            │      │ Examples:              │
+│ _givenName           │      │ ShowWesternName()      │
+│ _familyName          │      │ ShowEasternName()      │
+│ _width               │      │ GetArea()              │
+│ _height              │      │ Display()              │
+│ _color               │      │                        │
+└──────────────────────┘      └────────────────────────┘
+
+
+================================================================
+                     PERSON CLASS EXAMPLE
+================================================================
+
+┌──────────────────────────────────────────────────────────────┐
+│                         Person                               │
+├──────────────────────────────────────────────────────────────┤
+│ Responsibilities:                                            │
+│ Hold and display personal information                        │
+├──────────────────────────────────────────────────────────────┤
+│ Attributes:                                                  │
+│ - _givenName : string                                        │
+│ - _familyName : string                                       │
+├──────────────────────────────────────────────────────────────┤
+│ Methods:                                                     │
+│ - ShowWesternName() : void                                   │
+│ - ShowEasternName() : void                                   │
+└──────────────────────────────────────────────────────────────┘
+
+
+Example Output:
+Joseph Smith
+Smith, Joseph
+
+
+================================================================
+                     BLIND CLASS EXAMPLE
+================================================================
+
+┌──────────────────────────────────────────────────────────────┐
+│                          Blind                               │
+├──────────────────────────────────────────────────────────────┤
+│ Responsibilities:                                            │
+│ Store blind information and calculate area                   │
+├──────────────────────────────────────────────────────────────┤
+│ Attributes:                                                  │
+│ - _width : double                                            │
+│ - _height : double                                           │
+│ - _color : string                                            │
+├──────────────────────────────────────────────────────────────┤
+│ Methods:                                                     │
+│ - GetArea() : double                                         │
+└──────────────────────────────────────────────────────────────┘
+
+
+                ▼ OBJECTS INSIDE OBJECTS ▼
+
+
+┌──────────────────────────────────────────────────────────────┐
+│                          House                               │
+├──────────────────────────────────────────────────────────────┤
+│ Attributes:                                                  │
+│ - _owner : string                                            │
+│ - _kitchen : Blind                                           │
+│ - _livingRoom : Blind                                        │
+└──────────────────────────────────────────────────────────────┘
+
+
+Example:
+johnsonHome._kitchen._width = 60;
+
+
+================================================================
+                  LISTS OF CUSTOM TYPES
+================================================================
+
+┌──────────────────────────────────────────────────────────────┐
+│                          House                               │
+├──────────────────────────────────────────────────────────────┤
+│ Attributes:                                                  │
+│ - _owner : string                                            │
+│ - _blinds : List<Blind>                                      │
+└──────────────────────────────────────────────────────────────┘
+
+
+Examples:
+johnsonHome._blinds.Add(kitchen);
+
+double amount =
+johnsonHome._blinds[0].GetArea();
+
+
+================================================================
+                     IMPORTANT TERMINOLOGY
+================================================================
+
+┌────────────────────┬─────────────────────────────────────────┐
+│ TERM               │ DEFINITION                              │
+├────────────────────┼─────────────────────────────────────────┤
+│ Abstraction        │ Simplifying complex ideas               │
+│ Class              │ Blueprint/template for objects          │
+│ Instance/Object    │ Real object created from class          │
+│ Instantiate        │ Create an object from a class           │
+│ Attribute          │ Variable storing object data            │
+│ Method             │ Function belonging to a class           │
+│ Constructor        │ Special method used with new            │
+│ Dot Notation       │ Access members using object.member      │
+│ Custom Data Type   │ User-created type using classes         │
+└────────────────────┴─────────────────────────────────────────┘
+
+
+================================================================
+                    RESUME ACTIVITY STRUCTURE
+================================================================
+
+┌──────────────────────────────────────────────────────────────┐
+│                           Job                                │
+├──────────────────────────────────────────────────────────────┤
+│ Responsibilities:                                            │
+│ Keep track of job information                                │
+├──────────────────────────────────────────────────────────────┤
+│ Attributes:                                                  │
+│ - _company                                                   │
+│ - _jobTitle                                                  │
+│ - _startYear                                                 │
+│ - _endYear                                                   │
+├──────────────────────────────────────────────────────────────┤
+│ Methods:                                                     │
+│ - Display()                                                  │
+└──────────────────────────────────────────────────────────────┘
+
+
+                ▼ USED INSIDE ▼
+
+
+┌──────────────────────────────────────────────────────────────┐
+│                         Resume                               │
+├──────────────────────────────────────────────────────────────┤
+│ Responsibilities:                                            │
+│ Store a person's name and list of jobs                       │
+├──────────────────────────────────────────────────────────────┤
+│ Attributes:                                                  │
+│ - _name                                                      │
+│ - _jobs : List<Job>                                          │
+├──────────────────────────────────────────────────────────────┤
+│ Methods:                                                     │
+│ - Display()                                                  │
+└──────────────────────────────────────────────────────────────┘
