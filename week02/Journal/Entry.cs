@@ -10,8 +10,7 @@ public class Entry
     {
         Console.WriteLine($"Date:    {_date}");
         Console.WriteLine($"Prompt:  {_randomPrompt}");
-        Console.WriteLine($"Reply:   {_promptEntry}");
-        
+        Console.WriteLine($"Reply:   {_promptEntry}"); 
     }
 }
 
