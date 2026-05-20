@@ -49,6 +49,6 @@ public class Journal
 
             Entry entry = new Entry(parts[0].Trim(), parts[1].Trim(), parts[2].Trim());
             _entriesList.Add(entry);
-    }
+        }
     }
 }

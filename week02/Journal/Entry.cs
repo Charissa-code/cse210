@@ -12,6 +12,7 @@ public class Entry
         _randomPrompt = randomPrompt;
         _promptEntry = promptEntry;
     }
+    
     public void Display()
     {
         Console.WriteLine($"Date: {_date}");

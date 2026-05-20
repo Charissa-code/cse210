@@ -22,7 +22,6 @@ class Program
             optionNumber = Console.ReadLine();
             Console.WriteLine($"You chose option {optionNumber}.");
 
-
             if (optionNumber == "1")
             {
                 myJournal.AddEntry(myPrompt.GetRandomPrompt());
