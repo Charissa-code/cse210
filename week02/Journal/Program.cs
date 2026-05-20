@@ -22,26 +22,10 @@ class Program
             optionNumber = Console.ReadLine();
             Console.WriteLine($"You chose option {optionNumber}.");
 
+
             if (optionNumber == "1")
             {
-                //CREATE AN ENTRY
-                Entry myEntry = new Entry(); //called Instantiate/Creating an ENTRY object
-                                             //FILL IT'S FIELDS WITH REAL VALUES
-                DateTime currentTime = DateTime.Now;
-                string date = currentTime.ToShortDateString(); // Store the value of date inside the _date field of the myEntry object.
-                                                               //GET/GENERATE A PROMPT
-                string randomPrompt = myPrompt.GetRandomPrompt();
-                //SHOW PROMPT TO USER
-                Console.WriteLine($"Prompt: {randomPrompt}");
-                //GET USER _promptEntry
-                Console.WriteLine("My Entry:");
-                string _promptEntry = Console.ReadLine();
-
-                myEntry._date = date;
-                myEntry._randomPrompt = randomPrompt;
-                myEntry._promptEntry = _promptEntry;
-
-                myJournal.AddEntry(myEntry);
+                myJournal.AddEntry(myPrompt.GetRandomPrompt());
             }
             
             //DISPLAY ALL ENTRIES

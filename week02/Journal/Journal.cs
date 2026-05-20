@@ -4,9 +4,6 @@ using System.IO;
 
 public class Journal
 {
-    public string _date = "";
-    public string _randomPrompt = "";
-    public string _promptEntry = "";
     public List<Entry> _entriesList = new List<Entry>();
 
     public void DisplayAll()
@@ -27,8 +24,13 @@ public class Journal
         }
     }
 
-    public void AddEntry(Entry newEntry)
+    public void AddEntry(string randomPrompt)
     {
+        Console.WriteLine($"Prompt: {randomPrompt}");
+        Console.WriteLine("My Entry:");
+        string promptEntry = Console.ReadLine();
+        string date = DateTime.Now.ToShortDateString();
+        Entry newEntry = new Entry(date, randomPrompt, promptEntry);
         _entriesList.Add(newEntry);
     }
 
@@ -45,12 +47,7 @@ public class Journal
                 continue;
             }
 
-            Entry entry = new Entry
-            {
-                _date = parts[0],
-                _randomPrompt = parts[1],
-                _promptEntry = parts[2]
-            };
+            Entry entry = new Entry(parts[0].Trim(), parts[1].Trim(), parts[2].Trim());
             _entriesList.Add(entry);
     }
     }
