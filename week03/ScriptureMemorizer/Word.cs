@@ -1,17 +1,44 @@
 public class Word
 {
-    //Keeps track of a single word and whether it is shown or hidden.   
-    //The key behaviors for the Word class are to hide and show a word and to check if a word is hidden or not. In addition, a Word should have a behavior to get the display text of that word, which would be either the word itself (for example, "prayer") or, if the word were hidden, this behavior would return underscores (for example, "______").
 
     private string _text;
     private bool _isHidden;
-    
-    public void Hide();
 
-    public void Show();
+    public Word(string text)
+    {
+        _text = text;
+        _isHidden = false;
+    }
+    public void Hide()
+    {
+        _isHidden = true;
+    }
 
-    public bool IsHidden();
+    public void Show()
+    {
+        _isHidden = false;
+    }
 
-    public string GetDisplayText();
 
+    public bool IsHidden()
+    {
+        return _isHidden;
+    }
+
+    public string GetDisplayText()
+    {
+        if (IsHidden() == true)
+        {
+            string result = "";
+            for (int i = 0; i < _text.Length; i++)
+            {
+                result += "_";
+            }
+            return result;
+        }
+        else
+        {
+            return _text;
+        }
+    }
 }

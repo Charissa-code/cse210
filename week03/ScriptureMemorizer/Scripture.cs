@@ -1,31 +1,73 @@
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-
+using System.Collections.Generic;
 public class Scripture
 {
-                //Keeps track of both the reference and the text of the scripture. Can hide words and get the rendered display of the text.
-                //The key behaviors for the Scripture class are to hide random words and also to get the display text as a string. (The "display text" refers to the text with some words shown normally, and some replaced by underscores.) It would also be nice to have a behavior to check if the scripture is completely hidden so that you know when to end the program.
 
-    private int _numberToHide;
-    private object _words; //: List<Word>
-    private _reference;  // :Reference
+    private List<Word> _wordsList;                  //just like _entriesList in Journal
+    private Reference _reference;               //same type as class above           
 
-
-    private List<Word> words = new List<Word>;
+    private string _originalText;
     
-
-    public void HideRandomWords(int NumberToHide);
+    public Scripture(Reference reference, string text)
     {
-        //possibly use methods...
-        public void Hide();
-        public void Show();
-        public bool IsHidden();
+        _reference = reference;
+        _originalText = text;
+        _wordsList = new List<Word>();
+        foreach (string word in text.Split(" ", StringSplitOptions.RemoveEmptyEntries))
+        {
+            _wordsList.Add(new Word(word));
+        }
+    }
 
+    public void HideRandomWords(int numberToHide)
+    {
+        List<Word> availableWords = new List<Word>();
+
+        foreach (Word word in _wordsList)
+        {
+            if (!word.IsHidden())
+            {
+                availableWords.Add(word);
+            }
+        }
+
+        if (availableWords.Count < numberToHide)
+        {
+            numberToHide = availableWords.Count;
+        }
+      
+        Random random = new Random();
+        for (int i = 0; i < numberToHide; i++)
+        {
+            int index = random.Next(availableWords.Count);
+            availableWords[index].Hide();
+            availableWords.RemoveAt(index);
+        }
     }
 
 
-    public string GetDisplayText(); //a string combining the book, chapter and verse or verses.
+    public string GetDisplayText()
+    {
+        string result = _reference.GetDisplayText() + " ";
+        foreach (Word word in _wordsList)
+        {
+            result += word.GetDisplayText() + " ";
+        }
+        return result;
+    }
 
-    public bool IsCompletelyHidden();
+    public bool IsCompletelyHidden()
+    {
+        foreach (Word word in _wordsList)
+        {
+            if (!word.IsHidden())
+                return false;
+        }
+        return true;
+    }
 
+    public string GetOriginalText()
+    {
+        return _reference.GetDisplayText() + " " + _originalText;
+    }   
 }
+
