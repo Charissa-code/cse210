@@ -1,5 +1,5 @@
 using System;
-
+//To exceed core requirements I  added code to remove 3 visible words each time Enter is pressed instead of having to press Enter several times with no action in the end when there are few words left. 
 class Program
 {
     static void Main(string[] args)
