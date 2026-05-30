@@ -2,19 +2,19 @@
 public class Product
 {
     private string _pName;
-    private string _pID;
+    private string _pId;
     private double _price;
     private int _quantity;
 
     
 
-    public string ProductID => _pID;
+    public string ProductId => _pId;
     public string ProductName => _pName;
 
-    public Product(string pName, string pID, double price, int quantity)
+    public Product(string pName, string pId, double price, int quantity)
     {
         _pName = pName;
-        _pID = pID;
+        _pId = pId;
         _price = price;
         _quantity = quantity;
     }
