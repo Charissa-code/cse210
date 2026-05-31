@@ -33,7 +33,6 @@ class Program
         order3.AddProduct(product3b);
         order3.AddProduct(product3c);
 
-
         List<Order> orders = new List<Order>();
         orders.Add(order1);
         orders.Add(order2);

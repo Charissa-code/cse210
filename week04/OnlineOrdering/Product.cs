@@ -7,7 +7,6 @@ public class Product
     private int _quantity;
 
     
-
     public string ProductId => _pId;
     public string ProductName => _pName;
 

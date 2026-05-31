@@ -45,7 +45,6 @@ public class Order
         return OrderCost() + Shipping();
     }
 
-
     public string PackingLabel()
     {
         string label = "";

@@ -11,8 +11,6 @@ public class Address
         _city = city;
         _stateProvince = stateProvince;
         _country = country;
-
-        
     }
     
     public string FullAddress()
