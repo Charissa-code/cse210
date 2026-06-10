@@ -1,7 +1,7 @@
 public class Activity
 {
-    protected string _name;
-    protected string _description;
+    private string _name;
+    private string _description;
     protected int _duration;
 
 
@@ -17,18 +17,19 @@ public class Activity
         Console.WriteLine(_description);
         Console.WriteLine("How many seconds do you want to do this activity?");
         _duration = int.Parse(Console.ReadLine());
-        Console.WriteLine("Begin");
-        ShowSpinner(5);
+        Console.WriteLine("Begin in...");
+        ShowCountDown(5);
     }
 
     public void DisplayEndingMessage()
     {
-        Console.WriteLine("This ends your mindfulness exercise.");
         Console.WriteLine("Great job!");
-        ShowSpinner(5);
+        ShowSpinner(3);
         Console.WriteLine($"You have just completed {_name} for {_duration} seconds.");
-        ShowSpinner(5);
-        Console.WriteLine("Now go take on the day.");
+        ShowSpinner(3);
+        Console.WriteLine("This ends your mindfulness exercise.");
+        ShowSpinner(3);
+     
     }
 
     public void ShowSpinner(int seconds)
@@ -67,6 +68,4 @@ public class Activity
             Console.Write("\b\b  \b\b");
         }
     }
-
-
 }

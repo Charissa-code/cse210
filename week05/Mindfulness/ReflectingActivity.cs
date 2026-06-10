@@ -28,13 +28,12 @@ public class ReflectingActivity : Activity
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(_duration);
         DisplayPrompt();
-        // Console.WriteLine("You may begin in...");
-        ShowCountDown(10);
+        ShowSpinner(15);
         
         while (DateTime.Now < endTime)
         {
             DisplayQuestions();
-            ShowSpinner(5);    
+            ShowSpinner(15);    
         }
         DisplayEndingMessage();
     }

@@ -15,9 +15,8 @@ public class ListingActivity : Activity
     public void Run()
     {
         DisplayStartMessage();
-        Console.WriteLine($"***{GetRandomPrompt()}***");
-        Console.WriteLine("You may begin in...");
-        ShowCountDown(10);
+        Console.WriteLine($"*{GetRandomPrompt()}*");
+        ShowSpinner(3);
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(_duration);
         List<string> responses = GetListFromUser(endTime);
