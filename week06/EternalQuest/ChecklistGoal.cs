@@ -51,9 +51,9 @@ public class ChecklistGoal : Goal
     public override string GetDetailsString()//override to show progress
     {
         if (!IsComplete())
-            return $"[ ] {_name}- {_description} --{_points} points  --{_bonus} bonus  target{_amountCompleted}/{_target}";
+            return $"[ ] {_name}- {_description} --{_points} points  --{_bonus} bonus  --target {_amountCompleted}/{_target}";
         else
-            return $"[X] {_name}- {_description} --{_points} points  --{_bonus} bonus  target{_amountCompleted}/{_target}";
+            return $"[X] {_name}- {_description} --{_points} points  --{_bonus} bonus  --target {_amountCompleted}/{_target}";
     }
 
     public override string GetShortDetails()

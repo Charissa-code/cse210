@@ -54,12 +54,11 @@ public class GoalManager
 
     public void DisplayPlayerInfo()  // Displays the players current score.
     {
+        Console.WriteLine("______________________________________________");
         Console.WriteLine();
-        Console.WriteLine("********************************************************");
         Console.WriteLine($"Total Score: {_score}");
         Console.WriteLine($"LEVEL: {GetLevel()}");
-        Console.WriteLine();
-        Console.WriteLine("********************************************************");
+        Console.WriteLine("______________________________________________");
         Console.WriteLine();
     }
 
@@ -126,7 +125,9 @@ public class GoalManager
 
     public void RecordEvent()  // Asks the user which goal they have done and then records the event by calling the RecordEvent method on that goal.
     {
+        Console.WriteLine();
         ListGoalNames();
+        Console.WriteLine();
         Console.Write($"Which goal did you accomplish? ");
         string recordInput = Console.ReadLine();
         int record = int.Parse(recordInput);
@@ -135,10 +136,12 @@ public class GoalManager
         int pointsEarned = _goals[goalIndex].GetPoints();
         _score += pointsEarned;
         Console.WriteLine();
-        Console.WriteLine($"You have earned {pointsEarned} points!");
+        Console.WriteLine($"  You have earned {pointsEarned} points!");
         if (_goals[goalIndex].IsComplete())
         {
-            Console.WriteLine("Checklist Goal Completed! BONUS points awarded!!");
+            Console.WriteLine();
+            Console.WriteLine("~*~ BONUS points awarded!! ~*~");
+            Console.WriteLine();
         }
     }
 
@@ -155,7 +158,8 @@ public class GoalManager
                 outputFile.WriteLine(goal.GetStringRepresentation());
             }
         }
-        Console.WriteLine("Your goals have been saved.");
+        Console.WriteLine();
+        Console.WriteLine("--Your goals have been saved.--");
     }
 
 

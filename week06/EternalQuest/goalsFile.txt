@@ -1,5 +1,1 @@
-0
-SimpleGoal:Exercise,On the treadmill 20 minutes,50,True
-ChecklistGoal:Dinner,Make dinner at night,50,500,0,3
-EternalGoal:Pray,Pray with Robert,50
-ChecklistGoal:Coding,Practice coding by working on my program,50,500,0,3
+

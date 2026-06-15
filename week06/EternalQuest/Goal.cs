@@ -20,9 +20,9 @@ public abstract class Goal
     public virtual string GetDetailsString()
     {
         if (IsComplete())
-            return $"[X] {_name}- {_description} --{_points}";
+            return $"[X] {_name}- {_description} --{_points} points";
         else
-            return $"[ ] {_name}- {_description} --{_points}";
+            return $"[ ] {_name}- {_description} --{_points} points";
     }
     public abstract string GetStringRepresentation();
 
