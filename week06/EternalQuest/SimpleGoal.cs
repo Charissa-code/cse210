@@ -6,9 +6,9 @@ public class SimpleGoal : Goal
     private bool _isComplete;
 
 
-    public SimpleGoal(string name, string description, int points) : base("Simple Goal", name, description, points)
+    public SimpleGoal(string name, string description, int points, bool isComplete) : base("Simple Goal", name, description, points)
     {
-        _isComplete = false;
+        _isComplete = isComplete; 
     }
 
     public override void RecordEvent()

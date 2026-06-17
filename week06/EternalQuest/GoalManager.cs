@@ -64,11 +64,13 @@ public class GoalManager
 
     public void CreateGoal()  // Asks the user for the information about a new goal. Then, creates the goal and adds it to the list.
     {
+        Console.WriteLine();
         Console.WriteLine("Goal Types:");
         Console.WriteLine("1. Simple Goal");
         Console.WriteLine("2. Eternal Goal");
         Console.WriteLine("3. Checklist Goal");
         Console.Write("Select the number of goal type that you want to create. ");
+        Console.WriteLine();
         string goalType = Console.ReadLine();
         Console.Write("Name of Goal: ");
         string name = Console.ReadLine();
@@ -79,7 +81,7 @@ public class GoalManager
         int pointsValue = int.Parse(pointsInput);
         if (goalType == "1")
         {
-            SimpleGoal newGoal = new SimpleGoal(name, description, pointsValue);
+            SimpleGoal newGoal = new SimpleGoal(name, description, pointsValue, false);
             _goals.Add(newGoal);
         }
         else if (goalType == "2")
@@ -136,8 +138,11 @@ public class GoalManager
         int pointsEarned = _goals[goalIndex].GetPoints();
         _score += pointsEarned;
         Console.WriteLine();
+        Console.WriteLine($"Great Job!");
         Console.WriteLine($"  You have earned {pointsEarned} points!");
-        if (_goals[goalIndex].IsComplete())
+        Console.WriteLine("  Select option '2. List Goals' to see this recorded goal.");
+
+        if (_goals[goalIndex] is ChecklistGoal && _goals[goalIndex].IsComplete())
         {
             Console.WriteLine();
             Console.WriteLine("~*~ BONUS points awarded!! ~*~");
@@ -171,6 +176,8 @@ public class GoalManager
         if (!File.Exists(goalsFile))
             return;
         string[] lines = System.IO.File.ReadAllLines(goalsFile);
+        if (lines.Length == 0)
+            return;
         _score = int.Parse(lines[0]);
         _goals.Clear();
         for (int i = 1; i < lines.Length; i++)
@@ -185,7 +192,9 @@ public class GoalManager
                 string name = dataParts[0];
                 string description = dataParts[1];
                 string point = dataParts[2];
-                _goals.Add(new SimpleGoal(name, description, int.Parse(point)));
+                string isCompleteStr = dataParts[3];
+                bool isComplete = bool.Parse(isCompleteStr);
+                _goals.Add(new SimpleGoal(name, description, int.Parse(point), isComplete));
             }
 
             else if (goalTypes == "EternalGoal")
