@@ -61,7 +61,6 @@ public class ReflectingActivity : Activity
     {
         Console.WriteLine(GetRandomQuestions());
     }
-
 }
 
 
